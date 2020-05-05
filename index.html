@@ -11,10 +11,16 @@
     <div class="wrapper">
         <header class="titles">
             <h1 class="title generic-font"><a class="mee6-link" href="https://mee6.xyz">mee6.xyz</a> Level Calculator</h1>
-            <h2 class="sub-title generic-font">Calculate messages needed to send <i>(for every minute)</i> in order to reach a level</h2>
+            <h3 class="sub-title generic-font">Calculate messages needed to send <i>(for every minute)</i> in order to reach a level</h3>
         </header>
 
         <div class="input-fields">
+            <label><b>XP Multiplier Value:
+            <select id="xp_multiplier">
+                <option type="number" value="1">1x</option>
+                <option type="number" value="2">2x</option>
+                <option type="number" value="3">3x</option>
+            </select></b></label>
             <input type="number" class="input-box generic-font" id="desired-level" placeholder="Desired Level">
             <input type="number" class="input-box generic-font" id="current-xp" placeholder="Current XP">
             <a class="button-calculate generic-font" onclick="calculate()" href="#result">Calculate</a>
@@ -22,7 +28,7 @@
 
         <div class="results" id="result">
             <div class="result-main">
-                <h2 class="result-title generic-font">Result: Avg. of <span id="result-average">_</span> messages</h2>
+                <h3 class="result-title generic-font">Result: Avg. of <span id="result-average">_</span> messages</h3>
                 <span class="result-sub-title generic-font"> required to send until you reach that level.</span>
                 <!-- <span class="sub-title">Average of  messages left</span> -->
                 <span class="result-xp-left generic-font">(You need another <span id="result-xp-needed">_</span> XP)</span>
