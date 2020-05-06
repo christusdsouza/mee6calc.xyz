@@ -14,19 +14,19 @@ function calculate() {
     var xp_needed = xp_to_desired_level - current_xp;
 
     //Minimum, average, and maximum messages needed to send in order to reach specified level
-    var min_messages_needed_to_send = Math.ceil(xp_needed / max_xp_gain_per_message);
-    var avg_messages_needed_to_send = Math.ceil(xp_needed / ((min_xp_gain_per_message + max_xp_gain_per_message) / 2));
-    var max_messages_needed_to_send = Math.ceil(xp_needed / min_xp_gain_per_message);
-    var avg_messages_hour = Math.round(avg_messages_needed_to_send/60);
-    var min_messages_hour = Math.round(min_messages_needed_to_send/60);
-    var max_messages_hour = Math.round(max_messages_needed_to_send/60);
+    var min_messages_needed_to_send = (xp_needed / max_xp_gain_per_message);
+    var avg_messages_needed_to_send = (xp_needed / ((min_xp_gain_per_message + max_xp_gain_per_message) / 2));
+    var max_messages_needed_to_send = (xp_needed / min_xp_gain_per_message);
+    var avg_messages_time = avg_messages_needed_to_send / 60 < 1 ? Math.floor(avg_messages_needed_to_send) + " minutes" :Math.round(avg_messages_needed_to_send/60) + " hours";
+    var min_messages_time = min_messages_needed_to_send / 60 < 1 ? Math.floor(min_messages_needed_to_send) + " minutes" :Math.round(min_messages_needed_to_send/60) + " hours";
+    var max_messages_time = max_messages_needed_to_send / 60 < 1 ? Math.floor(max_messages_needed_to_send) + " minutes" :Math.round(max_messages_needed_to_send/60) + " hours";
 
     //Display information to user
-    document.getElementById("result-average").innerHTML = avg_messages_needed_to_send;
+    document.getElementById("result-average").innerHTML = Math.ceil(avg_messages_needed_to_send);
     document.getElementById("result-xp-needed").innerHTML = xp_needed;
-    document.getElementById("result-minimum-messages-requirement").innerHTML = min_messages_needed_to_send;
-    document.getElementById("result-maximum-messages-requirement").innerHTML = max_messages_needed_to_send;
-    document.getElementById("avg_message_hours").innerHTML = avg_messages_hour;
-    document.getElementById("min_message_hours").innerHTML = min_messages_hour;
-    document.getElementById("max_message_hours").innerHTML = max_messages_hour;
+    document.getElementById("result-minimum-messages-requirement").innerHTML = Math.ceil(min_messages_needed_to_send);
+    document.getElementById("result-maximum-messages-requirement").innerHTML = Math.ceil(max_messages_needed_to_send);
+    document.getElementById("avg_message_time").innerHTML = avg_messages_time;
+    document.getElementById("min_message_time").innerHTML = min_messages_time;
+    document.getElementById("max_message_time").innerHTML = max_messages_time;
 }
