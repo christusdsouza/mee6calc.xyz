@@ -17,10 +17,16 @@ function calculate() {
     var min_messages_needed_to_send = Math.ceil(xp_needed / max_xp_gain_per_message);
     var avg_messages_needed_to_send = Math.ceil(xp_needed / ((min_xp_gain_per_message + max_xp_gain_per_message) / 2));
     var max_messages_needed_to_send = Math.ceil(xp_needed / min_xp_gain_per_message);
+    var avg_messages_hour = Math.round(avg_messages_needed_to_send/60);
+    var min_messages_hour = Math.round(min_messages_needed_to_send/60);
+    var max_messages_hour = Math.round(max_messages_needed_to_send/60);
 
     //Display information to user
     document.getElementById("result-average").innerHTML = avg_messages_needed_to_send;
     document.getElementById("result-xp-needed").innerHTML = xp_needed;
     document.getElementById("result-minimum-messages-requirement").innerHTML = min_messages_needed_to_send;
     document.getElementById("result-maximum-messages-requirement").innerHTML = max_messages_needed_to_send;
+    document.getElementById("avg_message_hours").innerHTML = avg_messages_hour;
+    document.getElementById("min_message_hours").innerHTML = min_messages_hour;
+    document.getElementById("max_message_hours").innerHTML = max_messages_hour;
 }
