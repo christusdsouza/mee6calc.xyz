@@ -11,7 +11,6 @@ body
 /* Title */
 .wrapper
 {
-    margin-top: -1em;
     width: auto;
     color: white;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -69,19 +68,21 @@ body
 
 .button-calculate
 {
-    padding: 15px 0;
+    padding: .5em 0;
     width: 600px;
     background: white;
     color: #008cba;
     font-size: 19px;
 }
-.button-calculate:hover
+.button-calculate:hover, a:hover
 {
     /* Same as mee6.xyz */
     background-color: #006687;
     color:#FFF;
+    font-size: 120%;
+    text-decoration: none;
 }
-#xp_multiplier {
+.xp-multiplier {
     margin: .5em .5em;   
 }
 /* Results */
@@ -149,7 +150,7 @@ body
 
 .disclaimer:hover
 {
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 .disclaimer a
@@ -167,33 +168,28 @@ body
         margin: 1em;
         text-align: center;
     }
-
-    @media (max-width: 800px)
+}
+@media (max-width: 800px)
+{
+    .wrapper
     {
-        .wrapper
-        {
-            width: 90vw;
-            margin: auto;
-        }
-
-        .title
-        {
-            font-size: 42px;
-        }
-
-        .input-box, .button-calculate
-        {
-            width: 100%;
-        }
-
-        .result-max-min-messages
-        {
-            width: 80vw;
-        }
-
-        .input-fields
-        {
-            margin: 3em 0 5em 0;
-        }
+        width: 90vw;
+        margin: auto;
+    }
+    .title
+    {
+        font-size: 42px;
+    }
+    .input-box, .button-calculate
+    {
+        width: 100%;
+    }
+    .result-max-min-messages
+    {
+        width: 80vw;
+    }
+    .input-fields
+    {
+        margin: 3em 0 5em 0;
     }
 }
