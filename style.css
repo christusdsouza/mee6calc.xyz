@@ -81,7 +81,9 @@ body
     background-color: #006687;
     color:#FFF;
 }
-
+#xp_multiplier {
+    margin: .5em .5em;   
+}
 /* Results */
 .results
 {
